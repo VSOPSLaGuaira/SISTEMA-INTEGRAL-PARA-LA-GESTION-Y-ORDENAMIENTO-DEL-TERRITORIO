@@ -47,14 +47,13 @@
         <script src="data/MovimientosdeMasa_7.js"></script>
         <script src="data/susceptibilidaddelosflujostorrenciales_8.js"></script>
         <script src="data/Intensidadesmaximasestimadas_9.js"></script>
-        <script src="data/LugaresHistoricos_10.js"></script>
-        <script src="data/EscuelasInspeccionadasLaGuaira_11.js"></script>
-        <script src="data/Ubicaciondelaspresas_12.js"></script>
-        <script src="data/Limitescuencas_13.js"></script>
-        <script src="data/Hidrografia_14.js"></script>
-        <script src="data/CentrospobladosVenezuela_15.js"></script>
-        <script src="data/VialidadVenezuela_16.js"></script>
-        <script src="data/ParroquiasdelestadoLaGuaira_17.js"></script>
+        <script src="data/EscuelasInspeccionadasLaGuaira_10.js"></script>
+        <script src="data/Ubicaciondelaspresas_11.js"></script>
+        <script src="data/Limitescuencas_12.js"></script>
+        <script src="data/Hidrografia_13.js"></script>
+        <script src="data/CentrospobladosVenezuela_14.js"></script>
+        <script src="data/VialidadVenezuela_15.js"></script>
+        <script src="data/ParroquiasdelestadoLaGuaira_16.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
@@ -943,71 +942,7 @@
         });
         bounds_group.addLayer(layer_Intensidadesmaximasestimadas_9);
         map.addLayer(layer_Intensidadesmaximasestimadas_9);
-        function pop_LugaresHistoricos_10(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2"><strong>Nombre</strong><br />' + (feature.properties['Nombre'] !== null ? autolinker.link(String(feature.properties['Nombre']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>Ubicaci�</strong><br />' + (feature.properties['Ubicaci�'] !== null ? autolinker.link(String(feature.properties['Ubicaci�']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>Parroquia</strong><br />' + (feature.properties['Parroquia'] !== null ? autolinker.link(String(feature.properties['Parroquia']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>Latitud</strong><br />' + (feature.properties['Latitud'] !== null ? autolinker.link(String(feature.properties['Latitud']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>Longitud</strong><br />' + (feature.properties['Longitud'] !== null ? autolinker.link(String(feature.properties['Longitud']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>Fuente</strong><br />' + (feature.properties['Fuente'] !== null ? autolinker.link(String(feature.properties['Fuente']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_LugaresHistoricos_10_0() {
-            return {
-                pane: 'pane_LugaresHistoricos_10',
-                radius: 4.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(164,113,88,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_LugaresHistoricos_10');
-        map.getPane('pane_LugaresHistoricos_10').style.zIndex = 410;
-        map.getPane('pane_LugaresHistoricos_10').style['mix-blend-mode'] = 'normal';
-        var layer_LugaresHistoricos_10 = new L.geoJson(json_LugaresHistoricos_10, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_LugaresHistoricos_10',
-            layerName: 'layer_LugaresHistoricos_10',
-            pane: 'pane_LugaresHistoricos_10',
-            onEachFeature: pop_LugaresHistoricos_10,
-            pointToLayer: function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_LugaresHistoricos_10_0(feature));
-            },
-        });
-        bounds_group.addLayer(layer_LugaresHistoricos_10);
-        map.addLayer(layer_LugaresHistoricos_10);
-        function pop_EscuelasInspeccionadasLaGuaira_11(feature, layer) {
+        function pop_EscuelasInspeccionadasLaGuaira_10(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">etiqueta</th>\
@@ -1057,11 +992,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_EscuelasInspeccionadasLaGuaira_11_0(feature) {
+        function style_EscuelasInspeccionadasLaGuaira_10_0(feature) {
             switch(String(feature.properties['etiqueta'])) {
                 case 'AMARILLO':
                     return {
-                pane: 'pane_EscuelasInspeccionadasLaGuaira_11',
+                pane: 'pane_EscuelasInspeccionadasLaGuaira_10',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1077,7 +1012,7 @@
                     break;
                 case 'NEGRO':
                     return {
-                pane: 'pane_EscuelasInspeccionadasLaGuaira_11',
+                pane: 'pane_EscuelasInspeccionadasLaGuaira_10',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1093,7 +1028,7 @@
                     break;
                 case 'ROJO':
                     return {
-                pane: 'pane_EscuelasInspeccionadasLaGuaira_11',
+                pane: 'pane_EscuelasInspeccionadasLaGuaira_10',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1109,7 +1044,7 @@
                     break;
                 case 'VERDE':
                     return {
-                pane: 'pane_EscuelasInspeccionadasLaGuaira_11',
+                pane: 'pane_EscuelasInspeccionadasLaGuaira_10',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1125,27 +1060,27 @@
                     break;
             }
         }
-        map.createPane('pane_EscuelasInspeccionadasLaGuaira_11');
-        map.getPane('pane_EscuelasInspeccionadasLaGuaira_11').style.zIndex = 411;
-        map.getPane('pane_EscuelasInspeccionadasLaGuaira_11').style['mix-blend-mode'] = 'normal';
-        var layer_EscuelasInspeccionadasLaGuaira_11 = new L.geoJson(json_EscuelasInspeccionadasLaGuaira_11, {
+        map.createPane('pane_EscuelasInspeccionadasLaGuaira_10');
+        map.getPane('pane_EscuelasInspeccionadasLaGuaira_10').style.zIndex = 410;
+        map.getPane('pane_EscuelasInspeccionadasLaGuaira_10').style['mix-blend-mode'] = 'normal';
+        var layer_EscuelasInspeccionadasLaGuaira_10 = new L.geoJson(json_EscuelasInspeccionadasLaGuaira_10, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_EscuelasInspeccionadasLaGuaira_11',
-            layerName: 'layer_EscuelasInspeccionadasLaGuaira_11',
-            pane: 'pane_EscuelasInspeccionadasLaGuaira_11',
-            onEachFeature: pop_EscuelasInspeccionadasLaGuaira_11,
+            dataVar: 'json_EscuelasInspeccionadasLaGuaira_10',
+            layerName: 'layer_EscuelasInspeccionadasLaGuaira_10',
+            pane: 'pane_EscuelasInspeccionadasLaGuaira_10',
+            onEachFeature: pop_EscuelasInspeccionadasLaGuaira_10,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_EscuelasInspeccionadasLaGuaira_11_0(feature));
+                return L.circleMarker(latlng, style_EscuelasInspeccionadasLaGuaira_10_0(feature));
             },
         });
-        bounds_group.addLayer(layer_EscuelasInspeccionadasLaGuaira_11);
-        map.addLayer(layer_EscuelasInspeccionadasLaGuaira_11);
-        function pop_Ubicaciondelaspresas_12(feature, layer) {
+        bounds_group.addLayer(layer_EscuelasInspeccionadasLaGuaira_10);
+        map.addLayer(layer_EscuelasInspeccionadasLaGuaira_10);
+        function pop_Ubicaciondelaspresas_11(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Fecha</th>\
@@ -1195,6 +1130,10 @@
                         <th scope="row">Imagen</th>\
                         <td>' + (feature.properties['Imagen'] !== null ? '<img src="images/' + String(feature.properties['Imagen']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
                     </tr>\
+                    <tr>\
+                        <th scope="row">Altura</th>\
+                        <td>' + (feature.properties['Altura'] !== null ? autolinker.link(String(feature.properties['Altura']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
@@ -1203,11 +1142,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Ubicaciondelaspresas_12_0(feature) {
+        function style_Ubicaciondelaspresas_11_0(feature) {
             switch(String(feature.properties['Tipo De presa'])) {
                 case 'Abierta':
                     return {
-                pane: 'pane_Ubicaciondelaspresas_12',
+                pane: 'pane_Ubicaciondelaspresas_11',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1223,7 +1162,7 @@
                     break;
                 case 'Cerrada':
                     return {
-                pane: 'pane_Ubicaciondelaspresas_12',
+                pane: 'pane_Ubicaciondelaspresas_11',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1239,7 +1178,7 @@
                     break;
                 default:
                     return {
-                pane: 'pane_Ubicaciondelaspresas_12',
+                pane: 'pane_Ubicaciondelaspresas_11',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1255,27 +1194,27 @@
                     break;
             }
         }
-        map.createPane('pane_Ubicaciondelaspresas_12');
-        map.getPane('pane_Ubicaciondelaspresas_12').style.zIndex = 412;
-        map.getPane('pane_Ubicaciondelaspresas_12').style['mix-blend-mode'] = 'normal';
-        var layer_Ubicaciondelaspresas_12 = new L.geoJson(json_Ubicaciondelaspresas_12, {
+        map.createPane('pane_Ubicaciondelaspresas_11');
+        map.getPane('pane_Ubicaciondelaspresas_11').style.zIndex = 411;
+        map.getPane('pane_Ubicaciondelaspresas_11').style['mix-blend-mode'] = 'normal';
+        var layer_Ubicaciondelaspresas_11 = new L.geoJson(json_Ubicaciondelaspresas_11, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Ubicaciondelaspresas_12',
-            layerName: 'layer_Ubicaciondelaspresas_12',
-            pane: 'pane_Ubicaciondelaspresas_12',
-            onEachFeature: pop_Ubicaciondelaspresas_12,
+            dataVar: 'json_Ubicaciondelaspresas_11',
+            layerName: 'layer_Ubicaciondelaspresas_11',
+            pane: 'pane_Ubicaciondelaspresas_11',
+            onEachFeature: pop_Ubicaciondelaspresas_11,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Ubicaciondelaspresas_12_0(feature));
+                return L.circleMarker(latlng, style_Ubicaciondelaspresas_11_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Ubicaciondelaspresas_12);
-        map.addLayer(layer_Ubicaciondelaspresas_12);
-        function pop_Limitescuencas_13(feature, layer) {
+        bounds_group.addLayer(layer_Ubicaciondelaspresas_11);
+        map.addLayer(layer_Ubicaciondelaspresas_11);
+        function pop_Limitescuencas_12(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">NOMBRE</th>\
@@ -1305,9 +1244,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Limitescuencas_13_0() {
+        function style_Limitescuencas_12_0() {
             return {
-                pane: 'pane_Limitescuencas_13',
+                pane: 'pane_Limitescuencas_12',
                 opacity: 1,
                 color: 'rgba(255,158,23,1.0)',
                 dashArray: '',
@@ -1318,21 +1257,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Limitescuencas_13');
-        map.getPane('pane_Limitescuencas_13').style.zIndex = 413;
-        map.getPane('pane_Limitescuencas_13').style['mix-blend-mode'] = 'normal';
-        var layer_Limitescuencas_13 = new L.geoJson(json_Limitescuencas_13, {
+        map.createPane('pane_Limitescuencas_12');
+        map.getPane('pane_Limitescuencas_12').style.zIndex = 412;
+        map.getPane('pane_Limitescuencas_12').style['mix-blend-mode'] = 'normal';
+        var layer_Limitescuencas_12 = new L.geoJson(json_Limitescuencas_12, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Limitescuencas_13',
-            layerName: 'layer_Limitescuencas_13',
-            pane: 'pane_Limitescuencas_13',
-            onEachFeature: pop_Limitescuencas_13,
-            style: style_Limitescuencas_13_0,
+            dataVar: 'json_Limitescuencas_12',
+            layerName: 'layer_Limitescuencas_12',
+            pane: 'pane_Limitescuencas_12',
+            onEachFeature: pop_Limitescuencas_12,
+            style: style_Limitescuencas_12_0,
         });
-        bounds_group.addLayer(layer_Limitescuencas_13);
-        map.addLayer(layer_Limitescuencas_13);
-        function pop_Hidrografia_14(feature, layer) {
+        bounds_group.addLayer(layer_Limitescuencas_12);
+        map.addLayer(layer_Limitescuencas_12);
+        function pop_Hidrografia_13(feature, layer) {
             var popupContent = '<table>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1342,9 +1281,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Hidrografia_14_0() {
+        function style_Hidrografia_13_0() {
             return {
-                pane: 'pane_Hidrografia_14',
+                pane: 'pane_Hidrografia_13',
                 opacity: 1,
                 color: 'rgba(11,203,221,1.0)',
                 dashArray: '',
@@ -1355,21 +1294,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Hidrografia_14');
-        map.getPane('pane_Hidrografia_14').style.zIndex = 414;
-        map.getPane('pane_Hidrografia_14').style['mix-blend-mode'] = 'normal';
-        var layer_Hidrografia_14 = new L.geoJson(json_Hidrografia_14, {
+        map.createPane('pane_Hidrografia_13');
+        map.getPane('pane_Hidrografia_13').style.zIndex = 413;
+        map.getPane('pane_Hidrografia_13').style['mix-blend-mode'] = 'normal';
+        var layer_Hidrografia_13 = new L.geoJson(json_Hidrografia_13, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Hidrografia_14',
-            layerName: 'layer_Hidrografia_14',
-            pane: 'pane_Hidrografia_14',
-            onEachFeature: pop_Hidrografia_14,
-            style: style_Hidrografia_14_0,
+            dataVar: 'json_Hidrografia_13',
+            layerName: 'layer_Hidrografia_13',
+            pane: 'pane_Hidrografia_13',
+            onEachFeature: pop_Hidrografia_13,
+            style: style_Hidrografia_13_0,
         });
-        bounds_group.addLayer(layer_Hidrografia_14);
-        map.addLayer(layer_Hidrografia_14);
-        function pop_CentrospobladosVenezuela_15(feature, layer) {
+        bounds_group.addLayer(layer_Hidrografia_13);
+        map.addLayer(layer_Hidrografia_13);
+        function pop_CentrospobladosVenezuela_14(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">municipio</th>\
@@ -1395,9 +1334,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_CentrospobladosVenezuela_15_0() {
+        function style_CentrospobladosVenezuela_14_0() {
             return {
-                pane: 'pane_CentrospobladosVenezuela_15',
+                pane: 'pane_CentrospobladosVenezuela_14',
                 shape: 'diamond',
                 radius: 1.0,
                 opacity: 1,
@@ -1412,27 +1351,27 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_CentrospobladosVenezuela_15');
-        map.getPane('pane_CentrospobladosVenezuela_15').style.zIndex = 415;
-        map.getPane('pane_CentrospobladosVenezuela_15').style['mix-blend-mode'] = 'normal';
-        var layer_CentrospobladosVenezuela_15 = new L.geoJson(json_CentrospobladosVenezuela_15, {
+        map.createPane('pane_CentrospobladosVenezuela_14');
+        map.getPane('pane_CentrospobladosVenezuela_14').style.zIndex = 414;
+        map.getPane('pane_CentrospobladosVenezuela_14').style['mix-blend-mode'] = 'normal';
+        var layer_CentrospobladosVenezuela_14 = new L.geoJson(json_CentrospobladosVenezuela_14, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_CentrospobladosVenezuela_15',
-            layerName: 'layer_CentrospobladosVenezuela_15',
-            pane: 'pane_CentrospobladosVenezuela_15',
-            onEachFeature: pop_CentrospobladosVenezuela_15,
+            dataVar: 'json_CentrospobladosVenezuela_14',
+            layerName: 'layer_CentrospobladosVenezuela_14',
+            pane: 'pane_CentrospobladosVenezuela_14',
+            onEachFeature: pop_CentrospobladosVenezuela_14,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_CentrospobladosVenezuela_15_0(feature));
+                return L.shapeMarker(latlng, style_CentrospobladosVenezuela_14_0(feature));
             },
         });
-        bounds_group.addLayer(layer_CentrospobladosVenezuela_15);
-        map.addLayer(layer_CentrospobladosVenezuela_15);
-        function pop_VialidadVenezuela_16(feature, layer) {
+        bounds_group.addLayer(layer_CentrospobladosVenezuela_14);
+        map.addLayer(layer_CentrospobladosVenezuela_14);
+        function pop_VialidadVenezuela_15(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">name</th>\
@@ -1454,9 +1393,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_VialidadVenezuela_16_0() {
+        function style_VialidadVenezuela_15_0() {
             return {
-                pane: 'pane_VialidadVenezuela_16',
+                pane: 'pane_VialidadVenezuela_15',
                 opacity: 1,
                 color: 'rgba(183,72,75,1.0)',
                 dashArray: '',
@@ -1467,21 +1406,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_VialidadVenezuela_16');
-        map.getPane('pane_VialidadVenezuela_16').style.zIndex = 416;
-        map.getPane('pane_VialidadVenezuela_16').style['mix-blend-mode'] = 'normal';
-        var layer_VialidadVenezuela_16 = new L.geoJson(json_VialidadVenezuela_16, {
+        map.createPane('pane_VialidadVenezuela_15');
+        map.getPane('pane_VialidadVenezuela_15').style.zIndex = 415;
+        map.getPane('pane_VialidadVenezuela_15').style['mix-blend-mode'] = 'normal';
+        var layer_VialidadVenezuela_15 = new L.geoJson(json_VialidadVenezuela_15, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_VialidadVenezuela_16',
-            layerName: 'layer_VialidadVenezuela_16',
-            pane: 'pane_VialidadVenezuela_16',
-            onEachFeature: pop_VialidadVenezuela_16,
-            style: style_VialidadVenezuela_16_0,
+            dataVar: 'json_VialidadVenezuela_15',
+            layerName: 'layer_VialidadVenezuela_15',
+            pane: 'pane_VialidadVenezuela_15',
+            onEachFeature: pop_VialidadVenezuela_15,
+            style: style_VialidadVenezuela_15_0,
         });
-        bounds_group.addLayer(layer_VialidadVenezuela_16);
-        map.addLayer(layer_VialidadVenezuela_16);
-        function pop_ParroquiasdelestadoLaGuaira_17(feature, layer) {
+        bounds_group.addLayer(layer_VialidadVenezuela_15);
+        map.addLayer(layer_VialidadVenezuela_15);
+        function pop_ParroquiasdelestadoLaGuaira_16(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -1532,9 +1471,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_ParroquiasdelestadoLaGuaira_17_0() {
+        function style_ParroquiasdelestadoLaGuaira_16_0() {
             return {
-                pane: 'pane_ParroquiasdelestadoLaGuaira_17',
+                pane: 'pane_ParroquiasdelestadoLaGuaira_16',
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
@@ -1545,42 +1484,41 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_ParroquiasdelestadoLaGuaira_17');
-        map.getPane('pane_ParroquiasdelestadoLaGuaira_17').style.zIndex = 417;
-        map.getPane('pane_ParroquiasdelestadoLaGuaira_17').style['mix-blend-mode'] = 'normal';
-        var layer_ParroquiasdelestadoLaGuaira_17 = new L.geoJson(json_ParroquiasdelestadoLaGuaira_17, {
+        map.createPane('pane_ParroquiasdelestadoLaGuaira_16');
+        map.getPane('pane_ParroquiasdelestadoLaGuaira_16').style.zIndex = 416;
+        map.getPane('pane_ParroquiasdelestadoLaGuaira_16').style['mix-blend-mode'] = 'normal';
+        var layer_ParroquiasdelestadoLaGuaira_16 = new L.geoJson(json_ParroquiasdelestadoLaGuaira_16, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_ParroquiasdelestadoLaGuaira_17',
-            layerName: 'layer_ParroquiasdelestadoLaGuaira_17',
-            pane: 'pane_ParroquiasdelestadoLaGuaira_17',
-            onEachFeature: pop_ParroquiasdelestadoLaGuaira_17,
-            style: style_ParroquiasdelestadoLaGuaira_17_0,
+            dataVar: 'json_ParroquiasdelestadoLaGuaira_16',
+            layerName: 'layer_ParroquiasdelestadoLaGuaira_16',
+            pane: 'pane_ParroquiasdelestadoLaGuaira_16',
+            onEachFeature: pop_ParroquiasdelestadoLaGuaira_16,
+            style: style_ParroquiasdelestadoLaGuaira_16_0,
         });
-        bounds_group.addLayer(layer_ParroquiasdelestadoLaGuaira_17);
-        map.addLayer(layer_ParroquiasdelestadoLaGuaira_17);
+        bounds_group.addLayer(layer_ParroquiasdelestadoLaGuaira_16);
+        map.addLayer(layer_ParroquiasdelestadoLaGuaira_16);
         var overlaysTree = [
         {label: '<b>BASE CARTOGRÁFICA Y REFERENCIAL</b>',  selectAllCheckbox: true, children: [
-            {label: '<img src="legend/ParroquiasdelestadoLaGuaira_17.png" /> Parroquias del estado La Guaira', layer: layer_ParroquiasdelestadoLaGuaira_17},
-            {label: '<img src="legend/VialidadVenezuela_16.png" /> Vialidad Venezuela', layer: layer_VialidadVenezuela_16},
-            {label: '<img src="legend/CentrospobladosVenezuela_15.png" /> Centros poblados Venezuela', layer: layer_CentrospobladosVenezuela_15},]},
+            {label: '<img src="legend/ParroquiasdelestadoLaGuaira_16.png" /> Parroquias del estado La Guaira', layer: layer_ParroquiasdelestadoLaGuaira_16},
+            {label: '<img src="legend/VialidadVenezuela_15.png" /> Vialidad Venezuela', layer: layer_VialidadVenezuela_15},
+            {label: '<img src="legend/CentrospobladosVenezuela_14.png" /> Centros poblados Venezuela', layer: layer_CentrospobladosVenezuela_14},]},
         {label: '<b>HIDROGRAFÍA E INFRAESTRUCTURA HIDRÁULICA</b>',  selectAllCheckbox: true, children: [
-            {label: '<img src="legend/Hidrografia_14.png" /> Hidrografia', layer: layer_Hidrografia_14},
-            {label: '<img src="legend/Limitescuencas_13.png" /> Limites cuencas', layer: layer_Limitescuencas_13},
-            {label: 'Ubicacion de las presas<br /><table><tr><td style="text-align: center;"><img src="legend/Ubicaciondelaspresas_12_Abierta0.png" /></td><td>Abierta</td></tr><tr><td style="text-align: center;"><img src="legend/Ubicaciondelaspresas_12_Cerrada1.png" /></td><td>Cerrada</td></tr><tr><td style="text-align: center;"><img src="legend/Ubicaciondelaspresas_12_DiquesContradiques2.png" /></td><td>Diques / Contradiques</td></tr></table>', layer: layer_Ubicaciondelaspresas_12},]},
+            {label: '<img src="legend/Hidrografia_13.png" /> Hidrografia', layer: layer_Hidrografia_13},
+            {label: '<img src="legend/Limitescuencas_12.png" /> Limites cuencas', layer: layer_Limitescuencas_12},
+            {label: 'Ubicacion de las presas<br /><table><tr><td style="text-align: center;"><img src="legend/Ubicaciondelaspresas_11_Abierta0.png" /></td><td>Abierta</td></tr><tr><td style="text-align: center;"><img src="legend/Ubicaciondelaspresas_11_Cerrada1.png" /></td><td>Cerrada</td></tr><tr><td style="text-align: center;"><img src="legend/Ubicaciondelaspresas_11_DiquesContradiques2.png" /></td><td>Diques / Contradiques</td></tr></table>', layer: layer_Ubicaciondelaspresas_11},]},
         {label: '<b>VULNERABILIDAD E INFRAESTRUCTURA</b>',  selectAllCheckbox: true, children: [
-            {label: 'Escuelas Inspeccionadas - La Guaira<br /><table><tr><td style="text-align: center;"><img src="legend/EscuelasInspeccionadasLaGuaira_11_AMARILLO0.png" /></td><td>AMARILLO</td></tr><tr><td style="text-align: center;"><img src="legend/EscuelasInspeccionadasLaGuaira_11_NEGRO1.png" /></td><td>NEGRO</td></tr><tr><td style="text-align: center;"><img src="legend/EscuelasInspeccionadasLaGuaira_11_ROJO2.png" /></td><td>ROJO</td></tr><tr><td style="text-align: center;"><img src="legend/EscuelasInspeccionadasLaGuaira_11_VERDE3.png" /></td><td>VERDE</td></tr></table>', layer: layer_EscuelasInspeccionadasLaGuaira_11},
-            {label: '<img src="legend/LugaresHistoricos_10.png" /> Lugares Historicos', layer: layer_LugaresHistoricos_10},]},
+            {label: 'Escuelas Inspeccionadas - La Guaira<br /><table><tr><td style="text-align: center;"><img src="legend/EscuelasInspeccionadasLaGuaira_10_AMARILLO0.png" /></td><td>AMARILLO</td></tr><tr><td style="text-align: center;"><img src="legend/EscuelasInspeccionadasLaGuaira_10_NEGRO1.png" /></td><td>NEGRO</td></tr><tr><td style="text-align: center;"><img src="legend/EscuelasInspeccionadasLaGuaira_10_ROJO2.png" /></td><td>ROJO</td></tr><tr><td style="text-align: center;"><img src="legend/EscuelasInspeccionadasLaGuaira_10_VERDE3.png" /></td><td>VERDE</td></tr></table>', layer: layer_EscuelasInspeccionadasLaGuaira_10},]},
         {label: '<b>AMENAZAS Y SUSCEPTIBILIDAD</b>',  selectAllCheckbox: true, children: [
             {label: 'Intensidades maximas estimadas<br /><table><tr><td style="text-align: center;"><img src="legend/Intensidadesmaximasestimadas_9_IX0.png" /></td><td>IX</td></tr><tr><td style="text-align: center;"><img src="legend/Intensidadesmaximasestimadas_9_VII1.png" /></td><td>VII</td></tr><tr><td style="text-align: center;"><img src="legend/Intensidadesmaximasestimadas_9_VIII2.png" /></td><td>VIII</td></tr></table>', layer: layer_Intensidadesmaximasestimadas_9},
             {label: 'susceptibilidad de los flujos torrenciales<br /><table><tr><td style="text-align: center;"><img src="legend/susceptibilidaddelosflujostorrenciales_8_Alta0.png" /></td><td>Alta</td></tr><tr><td style="text-align: center;"><img src="legend/susceptibilidaddelosflujostorrenciales_8_Baja1.png" /></td><td>Baja</td></tr><tr><td style="text-align: center;"><img src="legend/susceptibilidaddelosflujostorrenciales_8_Media2.png" /></td><td>Media</td></tr></table>', layer: layer_susceptibilidaddelosflujostorrenciales_8},
             {label: 'Movimientos de Masa <br /><table><tr><td style="text-align: center;"><img src="legend/MovimientosdeMasa_7_Alta0.png" /></td><td>Alta</td></tr><tr><td style="text-align: center;"><img src="legend/MovimientosdeMasa_7_Baja1.png" /></td><td>Baja</td></tr><tr><td style="text-align: center;"><img src="legend/MovimientosdeMasa_7_Media2.png" /></td><td>Media</td></tr></table>', layer: layer_MovimientosdeMasa_7},]},
-        {label: '<b>GEOLOGÍA Y LITOLOGÍA</b>', collapsed: true, selectAllCheckbox: true, children: [
+        {label: '<b>GEOLOGÍA Y LITOLOGÍA</b>',  selectAllCheckbox: true, children: [
             {label: 'Formaciones Geologicas<br /><table><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_Aluvión0.png" /></td><td>Aluvión</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_Aluviónfluvialantiguo1.png" /></td><td>Aluvión fluvial antiguo</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_AnfibolitadeNirgua2.png" /></td><td>Anfibolita de Nirgua</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_AsociaciónMetamórficaAvila3.png" /></td><td>Asociación Metamórfica Avila</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_AugengneisdePeñadeMora4.png" /></td><td>Augengneis de Peña de Mora</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_ComplejoSanJulián5.png" /></td><td>Complejo San Julián</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_EsquistosdeLasBrisas6.png" /></td><td>Esquistos de Las Brisas</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_EsquistosdeLasMercedes7.png" /></td><td>Esquistos de Las Mercedes</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_EsquistosdeTacagua8.png" /></td><td>Esquistos de Tacagua</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_FormaciónGuatire9.png" /></td><td>Formación Guatire</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_FormaciónLaPlayita10.png" /></td><td>Formación La Playita</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_FormaciónLaSabana11.png" /></td><td>Formación La Sabana</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_GneisdelaColoniaTovar12.png" /></td><td>Gneis de la Colonia Tovar</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_GrupoCaboBlanco13.png" /></td><td>Grupo Cabo Blanco</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_MármoldeAntímano14.png" /></td><td>Mármol de Antímano</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_MármoldeLosColorados15.png" /></td><td>Mármol de Los Colorados</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_MármoldeZenda16.png" /></td><td>Mármol de Zenda</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_MetaDioritadeTodasana17.png" /></td><td>Meta-Diorita de Todasana</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_MetaGranitodeNaiguatá18.png" /></td><td>Meta-Granito de Naiguatá</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_MetaIgneasdeTócome19.png" /></td><td>Meta-Igneas de Tócome</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_MetaTonalitadeCaruao20.png" /></td><td>Meta-Tonalita de Caruao</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_Metagranito21.png" /></td><td>Metagranito</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_Serpentinita22.png" /></td><td>Serpentinita</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_SuperAsociaciónMetamórficadelaCordilleradelaCosta23.png" /></td><td>Super Asociación Metamórfica de la Cordillera de la Costa</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_Terrazas24.png" /></td><td>Terrazas</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_UnidadFeldespática25.png" /></td><td>Unidad Feldespática</td></tr><tr><td style="text-align: center;"><img src="legend/FormacionesGeologicas_6_26.png" /></td><td></td></tr></table>', layer: layer_FormacionesGeologicas_6},]},
-        {label: '<b>COMUNAS Y CONSEJOS COMUNALES</b>', collapsed: true, selectAllCheckbox: true, children: [
+        {label: '<b>COMUNAS Y CONSEJOS COMUNALES</b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/COMUNAS_5.png" /> COMUNAS', layer: layer_COMUNAS_5},
             {label: '<img src="legend/CONSEJOSCOMUNALES_4.png" /> CONSEJOS COMUNALES', layer: layer_CONSEJOSCOMUNALES_4},]},
-        {label: '<b>PUENTES Y PASARELAS</b>', collapsed: true, selectAllCheckbox: true, children: [
+        {label: '<b>PUENTES Y PASARELAS</b>',  selectAllCheckbox: true, children: [
             {label: '<img src="legend/Lineaspuentes_3.png" /> Lineas puentes', layer: layer_Lineaspuentes_3},
             {label: '<img src="legend/lineapasarela_2.png" /> linea-pasarela', layer: layer_lineapasarela_2},
             {label: '<img src="legend/elevados_1.png" /> elevados', layer: layer_elevados_1},]},
@@ -1596,15 +1534,15 @@
         });
         lay.addTo(map);
         setBounds();
-        resetLabels([layer_CentrospobladosVenezuela_15]);
+        resetLabels([layer_CentrospobladosVenezuela_14]);
         map.on("zoomend", function(){
-            resetLabels([layer_CentrospobladosVenezuela_15]);
+            resetLabels([layer_CentrospobladosVenezuela_14]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_CentrospobladosVenezuela_15]);
+            resetLabels([layer_CentrospobladosVenezuela_14]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_CentrospobladosVenezuela_15]);
+            resetLabels([layer_CentrospobladosVenezuela_14]);
         });
         </script>        
     </body>
